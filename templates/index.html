@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'index.css'}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stickcode_Reactive</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
+
+<body>
+<div id="headi"><!-- 상단바 고정 -->
+    보금자리
+
+    <div class="box">
+        <button type="button" class="btm_image; float-right" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\alram.png" height="50px">
+        </button>
+    </div>
+
+    <div class="box">
+        <button type="button" class="btm_image; float-right" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\user (2).png" height="50px">
+        </button>
+    </div>
+
+</div>
+
+
+<div id="header_serve"></div><!-- 상단바 고정시 필요한 공백 추가 -->
+
+
+<div id="notice">
+    <div class="title">
+        {% for notice in notices %}
+        <tr>
+            <td>{{notic.title}}</td>
+        </tr>
+        {% endfor %}
+
+    </div><!--공지 제목-->
+    <div class="contents"><!--공지 내용-->
+        {% for notice in notices %}
+        <tr>
+            <td>{{notice.content}}</td>
+        </tr>
+        {% endfor %}
+    </div>
+</div>
+<div id="text">바로가기</div>
+<div id="main">
+
+    <div class="box">
+        <button type="button" class="btm_image" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\car.png" height="50px">
+        </button>
+        <p></p>
+    </div>
+    <div class="box">
+        <button type="button" class="btm_image" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\pyen.png" height="50px">
+        </button>
+    </div>
+    <div class="box">
+        <button type="button" class="btm_image" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\yogum.png" height="50px">
+        </button>
+    </div>
+    <div class="box">
+        <button type="button" class="btm_image" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\minwon.png" height="50px">
+        </button>
+    </div>
+    <div class="box">
+        <button type="button" class="btm_image" id="img_btn">
+            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\sotong.png" height="50px">
+        </button>
+    </div>
+</div>
+<!--일정----------------------------------------------------------------------------------------------------------------------------->
+
+
+<div id="text">주간일정</div>
+<footer>
+    <p id="today"></p>
+    <p id="Mydate"></p>
+    <p id="year"></p>
+    <p id="month"></p>
+    <p id="date"></p>
+    <p id="day"></p>
+    <p id="hour"></p>
+    <p id="min"></p>
+    <p id="second"></p>
+
+    <script type="text/javascript">
+
+        let day = new Date();
+        document.getElementById('today').innerHTML = "오늘날짜 : " + day;
+        let d = new Date();// 현재년월 현재시간 
+        d = new Date(2021, 1 - 1, 23, 01, 30, 10);	// setter (월 -1)
+        d = new Date("Jan 23, 2021 1:30:10");		// setter
+        document.getElementById('Mydate').innerHTML = "설정날짜 : " + d;
+        document.getElementById('year').innerHTML = "년도 : " + day.getFullYear();
+        document.getElementById('month').innerHTML = "월 : " + parseInt(day.getMonth() + 1);
+        document.getElementById('date').innerHTML = "일 : " + day.getDate();
+        document.getElementById('day').innerHTML = "요일 : " + day.getDay();		 // 요일(일:0~토:6)			
+        document.getElementById('hour').innerHTML = "시 : " + day.getHours();
+        document.getElementById('min').innerHTML = "분 : " + day.getMinutes();
+        document.getElementById('second').innerHTML = "초 : " + day.getSeconds();
+
+
+        <div class="plan"> document.getElementById('month').innerHTML = "월 : " + parseInt(day.getMonth()+1);</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">화</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">수</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">목</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">금</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">토</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+        <div class="plan">일</div>
+        <div class="content_plan">
+            {% for calendar in calendars %}
+            <tr>
+                <td>{{calendar.title}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+    </script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div id = 'container' style="width:100%;">
+    <canvas id="line-chart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var config ={
+        type: 'line',
+        data:{
+            datasets:[{
+                data: {{data|safe}}
+            }],
+            labels: {{labels|safe}}
+        },
+        options:{
+            responsive: true
+        },
+        scales: {
+            x: {
+            display: true,
+            text: '년월'
+            },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Value'
+            }
+          }
+        }
+    };
+
+    window.onload = function(){
+        var ctx = document.getElementById('line-chart').getContext('2d');
+        window.myLine = new Chart(ctx,config)
+    }
+</script>

@@ -1,0 +1,142 @@
+img {
+    max-width: 100%;
+  }
+
+button {
+    max-width: 100%;
+    border:none;
+    background-color:transparent;
+  }
+
+
+#main .div {
+    font-size: 50px;
+    text-align: center;
+}
+
+#text {
+    background-color:#ffffff;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+#main .box {
+    background-color: #ffffff;
+    text-align: center;
+    min-height: 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #91e4ff;
+    gap: 10px 5px;
+    padding: 1rem;
+}
+.plan{
+    background-color: #ffffff;
+    text-align: center;
+    min-height: 0;
+    padding: 1rem;
+    background-color:#ffffff;
+    border-radius: 10px 0px 0px 10px;
+    overflow:hidden;
+    height:auto;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.content_plan{
+    background-color: #ffffff;
+    text-align: left;
+    min-height: 0;
+    padding: 1rem;
+    background-color:#ffffff;
+    border-radius: 0px 10px 10px 0px;
+    overflow:hidden;
+    height:auto;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    word-wrap:break-word;
+    word-break:break-all;
+}
+#header_serve {
+    height: 30px;
+    padding: 1rem;
+    color: white;
+    background: hsl(0, 0%, 100%);
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+#headi {
+    display: grid;
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-template-columns: 9fr 1fr 1fr;
+    height: 30px;
+    padding: 1rem;
+    color: white;
+    background: hsl(211, 100%, 62%);
+    justify-items: start;
+
+}
+#headi .box{
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+
+  }
+
+    #main {
+        display: grid;
+        height: 700px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+
+    #notice {
+        background-color:#0f9df5;
+        border-radius: 30px;
+        text-align: left;
+        top: 0;
+        left: 0;
+        right: 0;
+        
+        font-size: 30px;
+        color: white;
+        height: auto;
+        padding: 1rem;
+    }
+    #notice .title{
+        padding: 1rem;
+        padding-bottom: 0rem;
+        background-color:#ffffff;
+        border-radius: 10px 10px 0px 0px;
+        overflow:hidden;
+        height:auto;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        word-break:keep-all;;
+    }
+    #notice .contents{
+        padding: 1rem;
+        padding-top: 0rem;
+        background-color:#ffffff;
+        border-radius: 0px 0px 10px 10px;
+        overflow:hidden;
+        height:auto;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        word-wrap:break-word;
+        word-break:break-all;
+    }
