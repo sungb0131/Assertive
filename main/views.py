@@ -4,6 +4,8 @@ from datetime import datetime
 
 from .models import Fee
 
+type_dict = {"electric": "전기", "water": "수도", "gas": "가스", "waste": "음식물 쓰레기 처리비"}
+
 class Plans:
     def __init__(self, date, title):
         self.date = date
@@ -29,7 +31,7 @@ def graph(request, time, kind):
     if time == 'both' or time == 'now':
         fee = Fee.objects.filter(user=request.user, date_year=datetime.now().year, kind=kind).order_by('date_month')
         data['datasets'].append({
-            "label": "작년",
+            "label": "올해",
             "data": [fee[i].fee for i in range(len(fee))]
         })
-    return render(request, 'graph.html', {'chart_data': json.dumps(data)})
+    return render(request, 'graph.html', {'graph_type':type_dict[kind],'chart_data': json.dumps(data), 'time': time})
