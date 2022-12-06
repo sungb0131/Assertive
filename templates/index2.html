@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>stickcode_Reactive</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'main/index.css'%}">
+    <link rel="stylesheet" href="main_page.css">
 </head>
 
 <!--상단바----------------------------------------------------------------------------------------------------------------------------->
@@ -16,13 +15,13 @@
     
         <div class="box">
             <button type="button" class="btm_image; float-right" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\alram.png"  height="50px">
+                <img  src="{% static 'main/alram.png'%}"  height="50px">
             </button>
         </div>
         
         <div class="box">
             <button type="button" class="btm_image; float-right" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\user (2).png"  height="50px">
+                <img  src="{% static 'main/user (2)png'%}"  height="50px">
             </button>
         </div>
 
@@ -64,33 +63,73 @@
         
         <div class="box">
             <button type="button" class="btm_image" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\car.png"  height="200px">
-            </button><p></p>
-        </div>
-        <div class="box">
-            <button type="button" onclick="location.href='/graph/both'" class="btm_image" id="img_btn" >
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\yogum.png"  height="200px">
+                <img  src="{% static 'main/car.png'%}g"  height="200px">
             </button>
+            <p>
+                주차
+            </p>
         </div>
+        
+        <div class="box">
+            <button type="button" onclick="location.href='gass_index.html'" class="btm_image" id="img_btn" >
+                <img  src="{% static 'main/yogum.png'%}"  height="200px">
+            </button>
+            <p>
+                가스요금 
+            </p>
+        </div>
+
+        <div class="box">
+            <button type="button" onclick="location.href='electricity_index.html'" class="btm_image" id="img_btn">
+                <img  src="{% static 'main/yogum.png'%}"  height="200px">
+            </button>
+            <p>
+                전기요금 
+            </p>
+        </div>
+
         <div class="box">
             <button type="button" class="btm_image" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\yogum.png"  height="200px">
+                <img  src="{% static 'main/pyen.png'%}"  height="200px">
             </button>
+            <p>
+                편의시설 
+            </p>
         </div>
         <div class="box">
-            <button type="button" class="btm_image" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\pyen.png"  height="200px">
+            <button type="button" onclick="location.href='list.html'" class="btm_image" id="img_btn">
+                <img  src="{% static 'main/sotong.png'%}"  height="200px">
             </button>
+            <p>
+                자유게시판 
+            </p>
         </div>
+
         <div class="box">
             <button type="button" class="btm_image" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\sotong.png"  height="200px">
+                <img  src="{% static 'main/sotong.png'%}"  height="200px">
             </button>
+            <p>
+                공지사항 
+            </p>
         </div>
+
         <div class="box">
             <button type="button" class="btm_image" id="img_btn">
-                <img  src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\minwon.png"  height="200px">
+                <img  src="{% static 'main/minwon.png'%}"  height="200px">
             </button>
+            <p>
+                민원 
+            </p>
+        </div>
+
+        <div class="box">
+            <button type="button" class="btm_image" id="img_btn">
+                <img  src="{% static 'main/alram.png'%}"  height="200px">
+            </button>
+            <p>
+                여긴뭐하지 
+            </p>
         </div>
     </div>
 
