@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'index.css'}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/index.css'%}">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>stickcode_Reactive</title>
-    <link rel="stylesheet" href="../static/index.css">
+    <title>보금자리</title>
+    <link rel="stylesheet" href="../static/main/index.css">
 </head>
 
 
@@ -15,13 +15,13 @@
 
     <div class="box">
         <button type="button" class="btm_image; float-right" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\alram.png" height="50px">
+            <img src="{% static 'main/alram.png'%}" height="50px">
         </button>
     </div>
 
     <div class="box">
         <button type="button" class="btm_image; float-right" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\user (2).png" height="50px">
+            <img src="{% static 'main/user.png'%}" height="50px">
         </button>
     </div>
 
@@ -35,7 +35,7 @@
     <div class="title">
         {% for notice in notices %}
         <tr>
-            <td>{{notic.title}}</td>
+            <td>{{notice.title}}</td>
         </tr>
         {% endfor %}
 
@@ -53,28 +53,28 @@
 
     <div class="box">
         <button type="button" class="btm_image" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\car.png" height="50px">
+            <img src="{% static 'main/car.png' %}" height="50px">
         </button>
         <p></p>
     </div>
     <div class="box">
         <button type="button" class="btm_image" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\pyen.png" height="50px">
+            <img src="{% static 'main/pyen.png' %}" height="50px">
         </button>
     </div>
     <div class="box">
         <button type="button" class="btm_image" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\yogum.png" height="50px">
+            <img src="{% static 'main/yogum.png' %}" height="50px">
         </button>
     </div>
     <div class="box">
         <button type="button" class="btm_image" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\minwon.png" height="50px">
+            <img src="{% static 'main/minwon.png' %}" height="50px">
         </button>
     </div>
     <div class="box">
         <button type="button" class="btm_image" id="img_btn">
-            <img src="C:\Users\ehfkw\Desktop\웹페이지\Gold_silver\sotong.png" height="50px">
+            <img src="{% static 'main/sotong.png' %}" height="50px">
         </button>
     </div>
 </div>
