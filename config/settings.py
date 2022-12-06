@@ -25,6 +25,9 @@ with open(BASE_DIR / 'config/secret.json') as f:
 
 SECRET_KEY = secret['django']
 
+LOGIN_REDIRECT_URL = 'main/'
+AUTH_USER_MODEL = 'main.User'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -33,6 +36,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '146.56.99.103', 'g4tsby.xyz']
 # Application definition
 
 INSTALLED_APPS = [
+    'common.apps.CommonConfig',
     'main.apps.MainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
