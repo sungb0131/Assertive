@@ -26,6 +26,10 @@ class Fee(models.Model):
     date_year = models.IntegerField()
     date_month = models.IntegerField()
 
+    type_dict = {"electric": "전기", "water": "수도", "gas": "가스", "waste": "음식물"}
+
+    def __str__(self):
+        return f"{self.type_dict[self.kind]}요금 {self.user.username}님 {self.date_year}년 {self.date_month}월"
 #security
 class CCTV(models.Model):
     address = models.CharField(max_length=100)
@@ -39,29 +43,28 @@ class security_todo(models.Model):
     status = models.FloatField()
 
 #commuity
-class Comment(models.Model):
-    date = models.DateTimeField()
-    title = models.CharField(max_length=20)
-    isAnonymous = models.BooleanField()
 
 class Post(models.Model):
+    auther = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     date = models.DateTimeField()
     contents = models.TextField()
-    isAnonymous = models.BooleanField()
 
-class board(models.Model):
+class CommunityPost(Post):
+    isAnonymous = models.BooleanField()
+    board = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.board}|{self.title}"
+
+class complaints(Post):
     category = models.CharField(max_length=20)
 
 class Notification(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     read = models.BooleanField()
     date = models.DateTimeField()
     title = models.CharField(max_length=20)
     contents = models.TextField()
 
 #complaints
-class complaints(models.Model):
-    category = models.CharField(max_length=20)
-    title = models.CharField(max_length=100)
-    date = models.DateTimeField()
-    contents = models.TextField()
