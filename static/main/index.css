@@ -6,6 +6,13 @@ button {
     max-width: 100%;
     border:none;
     background-color:transparent;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    background-color:#ffffff;
+    border-radius: 10px 10px 10px 10px;
+    word-wrap:break-word;
+    word-break:break-all;
+
   }
 
 
@@ -121,25 +128,17 @@ footer {
     }
     #notice .title{
         padding: 1rem;
-        padding-bottom: 0rem;
+        padding-bottom: 1rem;
         background-color:#ffffff;
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 10px 10px 10px 10px;
         overflow:hidden;
+        border-radius: 30px;
         height:auto;
-        font-size: 30px;
+        font-size: 50px;
         font-weight: bold;
         color: rgb(0, 0, 0);
         word-break:keep-all;;
+        border: 10px solid;
+        border-color: #0f9df5;
     }
-    #notice .contents{
-        padding: 1rem;
-        padding-top: 0rem;
-        background-color:#ffffff;
-        border-radius: 0px 0px 10px 10px;
-        overflow:hidden;
-        height:auto;
-        font-size: 30px;
-        color: rgb(0, 0, 0);
-        word-wrap:break-word;
-        word-break:break-all;
-    }
+   
