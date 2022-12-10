@@ -18,8 +18,8 @@ body {
     background-color: rgba(red, green, blue, alpha);
  }
 
- .login-form {position: relative; z-index: 2;}
- .login-form h1 {
+ .lo {position: relative; z-index: 2;}
+ .lo h1 {
     border: 2px solid #FFF;
     border-radius: 40px 0px 40px 0px;
     border-color: #FFF;
@@ -31,7 +31,6 @@ body {
 
  }
  .int-area {
-
     width: 400px; position: relative;
     margin-top: 30px;
 
@@ -52,22 +51,7 @@ body {
     position: absolute; left: 10px; top: 15px;
     font-size: 22px; color: #FFF;
     transition: all .5s ease;
-}
-.int-area label.warning {
-    color: red;
-    animation: warning .3s ease;
-    animation-iteration-count: 3;
-}
-@keyframes warning {
-    0% {transform: translateX(-8px);}
-    25% {transform: translateX(8px);}
-    50% {transform: translateX(-8px);}
-    75% {transform: translateX(8px);}
-}
-.int-area input:focus + label,
-.int-area input:valid + label {
-    top:-2px;
-    font-size: 16px; color: #FFF;
+
 }
 
 .btn-area {margin-top: 30px;}
