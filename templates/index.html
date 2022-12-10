@@ -40,12 +40,8 @@
     {% for notice in notices %}
 
     <div class="title">
-
-        <button type="button" onclick="location.href='{{notice.link}}'" >
-            {{notice.title}}
-        </button>
-
-</div>
+        <a href="{{ notice.id }}">{{ notice.title }}</a>
+    </div>
 
 
         {% endfor %}
