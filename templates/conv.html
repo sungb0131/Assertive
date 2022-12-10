@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+    {% load static %}
+    <title>ccc</title>
+    <link rel="stylesheet" href="{% static 'main/conv.css'%}">
+</head>
+<body>
+
+<div class="wrap">
+    <div class="title">
+       <h2>편의시설</h2>
+    </div>
+{% for content in contents %}
+    <div class="image">
+        <div class="imgBox">
+               <p>{{content.title}}</p>
+        </div>
+
+        <div class="inform">
+                <p>위치:{{content.location}}</p>
+                <p>이용 시간 :{{content.time}}</p>
+                <p>이용 안내 :{{content.name}}</p>
+                <p>이용 요금 :{{content.cost}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>

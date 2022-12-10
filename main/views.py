@@ -1,9 +1,9 @@
 import json
 from datetime import datetime
-from django.shortcuts import render, redirect
-from django.core.paginator import Paginator
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 
-from .models import Fee, CommunityPost
+from .models import Fee, CommunityPost, Convenient, Comment
 
 class Plans:
     def __init__(self, date, title):
@@ -45,7 +45,21 @@ def board_list(request):
         return redirect('/')
     return render(request, 'list.html', {'board_list': CommunityPost.objects.all().order_by('-date')})
 
+def add_comment(request, post_id):
+    post = get_object_or_404(CommunityPost, pk=post_id)
+    comment = Comment(
+        post=post,
+        auther=request.user,
+        contents=request.POST['comment'],
+        date=timezone.now()
+    )
+    comment.save()
+    return redirect(f'/main/board/{post_id}')
+
 def post(request, board_id):
     if not request.user.is_authenticated:
         return redirect('/')
-    return render(request, 'view.html', {'board': CommunityPost.objects.get(id=board_id)})
+    return render(request, 'view.html', {'board': CommunityPost.objects.get(id=board_id), 'comment': Comment.objects.filter(post_id=board_id).order_by('-date')})
+
+def conv(request):
+    return render(request, 'conv.html', {'contents': Convenient.objects.all()})

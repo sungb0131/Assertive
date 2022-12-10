@@ -1,0 +1,111 @@
+img {
+    max-width: 100%;
+  }
+
+button {
+    max-width: 100%;
+    border:none;
+    background-color:transparent;
+  }
+  #header_serve {
+    height: 80px;
+    padding: 1rem;
+    color: white;
+    background: hsl(0, 0%, 100%);
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+#headi {
+    display: grid;
+    grid-template-columns: 9fr 1fr 1fr;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    height: 40px;
+    padding: 2rem;
+    color: white;
+    align-items: center;
+    background: hsl(211, 100%, 62%);
+    justify-content: space-between;
+}
+#headi .box{
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    
+  }
+
+
+  #notice {
+    background-color:#0f9df5;
+    border-radius: 30px;
+    border-color: #ffffff;
+    border-style: solid;
+    text-align: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    font-size: 30px;
+    color: white;
+    height: auto;
+    padding: 1rem;
+}
+
+
+#bt{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color:#0f9df5;
+  text-align: center;
+  min-height: 0;
+  padding: 0.5rem;
+  justify-content: space-between;
+    align-items: center;
+}
+
+.div2 {
+  border: 1px solid;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: thick;
+  border-radius: 10px 10px 10px 10px;
+  background-color:#ffffff;
+  font-weight: bold;
+  color: #0f9df5;
+}
+
+
+#notice .title{
+    padding: 1rem;
+    padding-bottom: 0rem;
+    background-color:#ffffff;
+    border-radius: 10px 10px 0px 0px;
+    overflow:hidden;
+    height:auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    word-break:keep-all;;
+}
+#notice .contents{
+    padding: 1rem;
+    padding-top: 0rem;
+    background-color:#ffffff;
+    border-radius: 0px 0px 10px 10px;
+    overflow:hidden;
+    height:auto;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    word-wrap:break-word;
+    word-break:break-all;
+}

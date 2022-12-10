@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet&family=Noto+Sans+KR:wght@500&display=swap');
+
+* {margin: 0; 
+   padding: 0;  
+   box-sizing: border-box;
+   
+}
+
+li{list-style: none;}
+
+body {
+    font-family: 'Hahmlet', serif;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    background: #fff
+}
+    .wrap {width: 100%; 
+          background: #fff;
+          padding: 0px;
+ }
+    .title {
+        position: fixed; 
+        width: 100%; 
+        height:60px; 
+        background: #87CEFA; 
+        margin-top: 0;
+    }
+    .title h2 { 
+        position: fixed;
+        top: 5px;
+        left: 20px;
+        right: 0;
+        font-size: 30px; 
+        padding: 0px; 
+        text-align: left; 
+        color: #fff; 
+        border-color: 3px black;
+
+    }
+
+    .image .imgBox {
+        width: 100%; 
+        height: 400px;
+        background: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MThfMTc5%2FMDAxNjUyODc5NzcyNzQ0.i8jY1c4AqB4H2CA8Fy9pICnE0Slvum-CWEVyQVFtWYAg.vG5NDmpnOKGf3D-NVPP05stK6zfasYhti5Oqf26KaEMg.JPEG.do-da%2FKakaoTalk_20220422_110713272_01.jpg&type=sc960_832)no-repeat left 0px top 0px/cover; padding: 30px;
+        border: 5px solid #87CEFA;  
+        border-radius: 5px; 
+        margin-top:80px; 
+    
+    }
+    .image .imgBox p {
+        width: 100%;
+        font-size: 30px; 
+        background-color: #fff; 
+        margin-bottom: 0; 
+        margin-top: 20px; 
+        border: 2px solid #87CEFA; 
+        border-radius: 50px 50px 50px 50px;
+        color: #070808;
+    }
+    .image .inform{
+        background:#fff; 
+        width:100%; 
+        height: 130px;  
+        border: 5px solid#87CEFA;  
+        border-radius: 5px; 
+        margin-top:5px;
+        font-size: 20px; 
+        color:rgb(8, 8, 8);
+    }

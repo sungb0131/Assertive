@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import park, Car, Amenities, Fee, CCTV, security_todo, Post, User, Notification, CommunityPost
+from .models import park, Car, Fee, CCTV, security_todo, Post, User, Notification, CommunityPost
 
 
 class FeeSearch(admin.ModelAdmin):

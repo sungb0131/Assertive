@@ -15,9 +15,11 @@ class Car(models.Model):
     visitor = models.BooleanField()
 
 #convenience0
-class Amenities(models.Model):
-    date = models.DateTimeField()
-    memo = models.CharField(max_length = 100)
+class Convenient(models.Model):
+    title = models.CharField(max_length=50)
+    time = models.CharField(max_length=50)
+    content = models.TextField()
+    cost = models.CharField(max_length=50)
 
 class Fee(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -40,7 +42,7 @@ class security_todo(models.Model):
     deadline = models.DateTimeField()
     title = models.CharField(max_length = 20)
     contents = models.TextField()
-    status = models.FloatField()
+    status = models.IntegerField()
 
 #commuity
 
@@ -56,6 +58,9 @@ class CommunityPost(Post):
 
     def __str__(self):
         return f"{self.board}|{self.title}"
+
+class Comment(Post):
+    post = models.ForeignKey(CommunityPost, on_delete=models.CASCADE)
 
 class complaints(Post):
     category = models.CharField(max_length=20)

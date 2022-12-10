@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css'%}">
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>공지사항</strong>
+            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    {{board.title}}
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>번호</dt>
+                        <dd>{{board.id}}</dd>
+                    </dl>
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd>{{board.auther}}</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>{{board.date}}</dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    {{board.contents}}
+                </div>
+            </div>
+            <div class="comment">
+                {% if user.is_authenticated %} 
+                <form action="/main/board/{{ board.id }}/comment" method="POST">
+                    {%csrf_token%}
+                    <input type="text" name="comment" placeholder="댓글을 입력하세요">
+                    
+                    <input type="checkbox" name="anonymous" values="'y">
+                    <span style="font-size: 0.7em;">익명</span>
+
+                    <input type="submit" value="댓글 작성하기">
+                </form>
+                {% endif %}
+            <div class="comment_view">
+            {%for c in comment %}
+                {%if c.isAnonymous == True%}
+                <span>익명</span>
+                {%else%}
+                <span>{{c.auther}}</span>
+                {%endif%}
+                {{c.contents}}
+            {% endfor %}
+            </div>
+            <div class="bt_wrap">
+                <a href="/main/board/list" class="on">목록</a>
+                <a href="edit.html">수정</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

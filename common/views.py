@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def security(request):
+    return render(request, 'security.html')

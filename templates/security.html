@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/security.css'%}">
+
+</head>
+
+<!--상단바----------------------------------------------------------------------------------------------------------------------------->
+  
+<body>
+    <div id="headi"><!-- 상단바 고정 -->
+        보금자리
+
+    </div>
+
+    <div id="header_serve"> </div><!-- 상단바 고정시 필요한 공백 추가 -->
+
+
+{% for todo in todos %}
+<div id="notice">
+    {{todo.date}}
+
+
+        <div class="title">
+            {{todo.title}}
+        </div>
+
+        <div class="contents">
+            {{todo.content}}
+            
+        </div>
+{% endfor %}
+        <div id="bt">
+            <div class="div2">필요</div>
+            <div class="div2">처리중</div>
+            <div class="div2">완료</div>
+        </div>
+        <script type="text/javascript">
+            
+            var div2 = document.getElementsByClassName('div2');
+        
+            for (var i = 0; i < div2.length; i++) {
+              div2[i].addEventListener('click', function(){
+                for (var j = 0; j < div2.length; j++) {
+                  div2[j].style.color = "#0f9df5";
+                }
+                this.style.color = "#004068";
+              })
+            }
+
+            </script>
+        
+</div>
+
+
+    </body>
+    </html>
