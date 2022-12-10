@@ -5,8 +5,6 @@ from django.core.paginator import Paginator
 
 from .models import Fee, CommunityPost
 
-type_dict = {"electric": "전기", "water": "수도", "gas": "가스", "waste": "음식물 쓰레기 처리비"}
-
 class Plans:
     def __init__(self, date, title):
         self.date = date
@@ -39,7 +37,8 @@ def graph(request, time, kind):
             "label": "올해",
             "data": [fee[i].fee for i in range(len(fee))]
         })
-    return render(request, 'graph.html', {'graph_type':type_dict[kind],'chart_data': json.dumps(data), 'time': time})
+    type_dict = {"electric": "전기", "water": "수도", "gas": "가스", "waste": "음식물 쓰레기 처리비"}
+    return render(request, 'graph.html', {'graph_type':type_dict[kind],'chart_data': json.dumps(data), 'time': time, 'type': kind})
 
 def board_list(request):
     if not request.user.is_authenticated:

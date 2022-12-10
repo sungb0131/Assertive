@@ -12,24 +12,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     {%if type == 'gas' %}
         <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
-        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
-        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
-        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
-    {% elif time == 'water_tax' %}
+        <button type="button" onclick="location.href='/main/graph/water/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electric/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif type == 'water' %}
         <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
-        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
-        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
-        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
-    {% elif time == 'electricity' %}
+        <button type="button" onclick="location.href='/main/graph/water/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electric/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif type == 'electric' %}
         <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
-        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
-        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
-        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
-    {% elif time == 'food_waste' %}
+        <button type="button" onclick="location.href='/main/graph/water/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electric/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif type == 'waste' %}
         <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
-        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
-        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
-        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/water/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electric/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/waste/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
     {% endif %}
 </head>
 <div id = 'container' style="width:100%;">
@@ -53,18 +53,18 @@
 </script>
 <body>
     {%if time == 'both' %}
-        <button type="button" onclick="location.href='/main/graph/gas/prev'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/now'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/prev'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/now'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/both'" class="btn btn-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
 
     {% elif time == 'now' %}
-        <button type="button" onclick="location.href='/main/graph/gas/prev'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/now'" class="btn btn-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/prev'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/now'" class="btn btn-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/both'" class="btn btn-outline-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
     {% elif time == 'prev' %}
-        <button type="button" onclick="location.href='/main/graph/gas/prev'" class="btn btn-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/now'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
-        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/prev'" class="btn btn-primary" style="width: 33%; height: 7%; font-size:150%">작년 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/now'" class="btn btn-outline-primary" style="width: 33%; height: 7%; font-size:150%">올해 요금</button>
+        <button type="button" onclick="location.href='/main/graph/{{ type }}/both'" class="btn btn-outline-primary" style="width: 32%; height: 7%; font-size:150%">작년 + 올해 요금</button>
     {% endif %}
     <div style="padding: 10;"></div>
     <button type="button" onclick="location.href='/main'" class="btn btn-outline-danger" style="width: 100%; height: 7%;">메인 화면 돌아가기</button>
