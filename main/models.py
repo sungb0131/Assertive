@@ -37,7 +37,7 @@ class CCTV(models.Model):
     address = models.CharField(max_length=100)
     floor = models.IntegerField()
 
-class security_todo(models.Model):
+class SecurityTodo(models.Model):
     date = models.DateTimeField()
     deadline = models.DateTimeField()
     title = models.CharField(max_length = 20)
