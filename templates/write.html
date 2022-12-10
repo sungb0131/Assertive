@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글쓰기 페이지</title>
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css.css'%}">
 </head>
 <body>
     <div class="board_wrap">
@@ -13,13 +14,13 @@
             <p>자신의 내용을 적어보아요!</p>
         </div>
         <div class="board_write_wrap">
-        <form method="POST">
+        <form action="/main/board/write/{{ board_id }}/submit" method="POST">
             {% csrf_token %}
             <div class="board_write">
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" name="boradname" placeholder="제목을 입력하세요"></dd>
+                        <dd><input type="text" name="postname" placeholder="제목을 입력하세요"></dd>
                     </dl>
                 </div>
                 <div class="info">
@@ -33,7 +34,7 @@
 
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
+                <input type="submit" value="등록">
                 <a href="list.html">취소</a>
             </div>
         </form>

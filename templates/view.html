@@ -55,11 +55,11 @@
                 {%else%}
                 <span>{{c.auther}}</span>
                 {%endif%}
-                {{c.contents}}
+                {{c.contents }}
             {% endfor %}
             </div>
             <div class="bt_wrap">
-                <a href="/main/board/list" class="on">목록</a>
+                <a href="/main/board/list/{{ board.board_id }}" class="on">목록</a>
                 <a href="edit.html">수정</a>
             </div>
         </div>

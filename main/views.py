@@ -3,7 +3,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
-from .models import Fee, CommunityPost, Convenient, Comment
+from .models import Fee, CommunityPost, Convenient, Comment, Board
 
 class Plans:
     def __init__(self, date, title):
@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html', {'plans': [
         Plans('12/4 (일)', '후라이드치킨먹기'), Plans('12/5 (월)', '양념치킨먹기'), Plans('12/6 (화)', '간장치킨먹기'), Plans('12/7 (수)', '뿌링클치킨먹기'),
         Plans('12/8 (목)', '굽네치킨먹기'), Plans('12/9 (금)', '지코바치킨먹기'), Plans('12/10 (토)', '눈꽃치즈치킨먹기')
-    ], 'notices': CommunityPost.objects.filter(board='notice').order_by('-date')[:5]})
+    ], 'notices': CommunityPost.objects.filter(board=1).order_by('-date')[:5]})
 
 def graph(request, time, kind):
     if not request.user.is_authenticated:
@@ -40,10 +40,13 @@ def graph(request, time, kind):
     type_dict = {"electric": "전기", "water": "수도", "gas": "가스", "waste": "음식물 쓰레기 처리비"}
     return render(request, 'graph.html', {'graph_type':type_dict[kind],'chart_data': json.dumps(data), 'time': time, 'type': kind})
 
-def board_list(request):
+def board_list(request, board_id):
     if not request.user.is_authenticated:
         return redirect('/')
-    return render(request, 'list.html', {'board_list': CommunityPost.objects.all().order_by('-date')})
+    return render(request, 'list.html', {
+        'board_list': CommunityPost.objects.filter(board=board_id).order_by('-date'),
+        'board_type': Board.objects.get(id=board_id)
+    })
 
 def add_comment(request, post_id):
     post = get_object_or_404(CommunityPost, pk=post_id)
@@ -56,10 +59,29 @@ def add_comment(request, post_id):
     comment.save()
     return redirect(f'/main/board/{post_id}')
 
-def post(request, board_id):
+def view_post(request, post_id):
     if not request.user.is_authenticated:
         return redirect('/')
-    return render(request, 'view.html', {'board': CommunityPost.objects.get(id=board_id), 'comment': Comment.objects.filter(post_id=board_id).order_by('-date')})
+    return render(request, 'view.html', {
+        'board': CommunityPost.objects.get(id=post_id),
+        'comment': Comment.objects.filter(post_id=post_id).order_by('-date')
+    })
 
 def conv(request):
     return render(request, 'conv.html', {'contents': Convenient.objects.all()})
+
+def write(request, board_id):
+    return render(request, 'write.html', {'board_id': board_id})
+
+def write_post(request, board_id):
+    if request.method == 'POST':
+        post = CommunityPost(
+            board=Board.objects.get(id=board_id),
+            auther=request.user,
+            title=request.POST['postname'],
+            contents=request.POST['contents'],
+            date=timezone.now(),
+            isAnonymous=request.POST.get('anonymous')=='y'
+        )
+        post.save()
+        return redirect(f'/main/board/list/{board_id}')
