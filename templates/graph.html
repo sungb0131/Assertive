@@ -10,7 +10,27 @@
     </h1>
     <div style="padding: 70;"></div>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+    {%if type == 'gas' %}
+        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
+        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif time == 'water_tax' %}
+        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
+        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif time == 'electricity' %}
+        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
+        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% elif time == 'food_waste' %}
+        <button type="button" onclick="location.href='/main/graph/gas/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">가스 요금</button>
+        <button type="button" onclick="location.href='/main/graph/water_tax/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">수도 요금</button>
+        <button type="button" onclick="location.href='/main/graph/electricity/both'" class="btn btn-outline-primary" style="width: 22%; height: 7%; font-size:150%">전기 요금</button>
+        <button type="button" onclick="location.href='/main/graph/food_waste/both'" class="btn btn-primary" style="width: 22%; height: 7%; font-size:150%">음식물 쓰레기 요금</button>
+    {% endif %}
 </head>
 <div id = 'container' style="width:100%;">
     <canvas id="line-chart" style="height:40vh; width:100vw"></canvas>
