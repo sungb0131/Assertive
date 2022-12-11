@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
-    car = models.CharField(max_length=8)
+    car = models.CharField(max_length=8, null=True)
     phone = models.CharField(max_length=11)
 
 class park(models.Model):
@@ -65,9 +65,6 @@ class CommunityPost(Post):
 class Comment(Post):
     post = models.ForeignKey(CommunityPost, on_delete=models.CASCADE)
 
-
-
-
 class complaints(Post):
     category = models.CharField(max_length=20)
 
@@ -78,4 +75,7 @@ class Notification(models.Model):
     title = models.CharField(max_length=20)
     contents = models.TextField()
 
-#complaints
+class Parking(models.Model):
+    floor = models.IntegerField()
+    status = models.TextField()
+    space = models.IntegerField()
