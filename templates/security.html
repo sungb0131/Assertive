@@ -30,32 +30,38 @@
         </div>
 
         <div class="contents">
-            {{todo.contents}}
+            {{todo.content}}
             
         </div>
-{% endfor %}
+
         <div id="bt">
-            <div class="div2">필요</div>
-            <div class="div2">처리중</div>
-            <div class="div2">완료</div>
-        </div>
-        <script type="text/javascript">
             
-            var div2 = document.getElementsByClassName('div2');
-        
-            for (var i = 0; i < div2.length; i++) {
-              div2[i].addEventListener('click', function(){
-                for (var j = 0; j < div2.length; j++) {
-                  div2[j].style.color = "#0f9df5";
-                }
-                this.style.color = "#004068";
-              })
-            }
+          
+          {%if todo.do == 'need' %}
+          <div id="bt">
+            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+        </div>
+          {%elif todo.do == 'ing' %}
+          <div id="bt">
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
+            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+        </div>
+           {%elif todo.do == 'end' %}
+           <div id="bt">
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
+            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
+            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+        </div>
+          {% endif %}
 
-            </script>
-        
+
+        </div>
+      
 </div>
-
+{% endfor %}
 
     </body>
     </html>
