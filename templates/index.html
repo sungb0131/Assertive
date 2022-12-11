@@ -39,10 +39,9 @@
 <div id="notice">공지
     {% for notice in notices %}
 
-    <div class="title">
-        <a href="{{ notice.id }}">{{ notice.title }}</a>
+    <div class="title" onclick="location.href='{{ notice.id }}'">
+        {{ notice.title }}
     </div>
-
 
         {% endfor %}
     </div>
