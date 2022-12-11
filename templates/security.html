@@ -40,21 +40,21 @@
           
           {%if todo.status == 0 %}
           <div id="bt">
-            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
           {%elif todo.status == 1 %}
           <div id="bt">
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
-            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
            {%elif todo.status == 2 %}
            <div id="bt">
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
-            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
-            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
           {% endif %}
 
