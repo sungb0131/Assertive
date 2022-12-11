@@ -3,7 +3,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
-from .models import Fee, CommunityPost, Convenient, Comment, Board
+from .models import Fee, CommunityPost, Convenient, Comment, Board, Parking
 
 class Plans:
     def __init__(self, date, title):
@@ -49,6 +49,8 @@ def board_list(request, board_id):
     })
 
 def add_comment(request, post_id):
+    if not request.user.is_authenticated:
+        return redirect('/')
     post = get_object_or_404(CommunityPost, pk=post_id)
     comment = Comment(
         post=post,
@@ -68,12 +70,18 @@ def view_post(request, post_id):
     })
 
 def conv(request):
+    if not request.user.is_authenticated:
+        return redirect('/')
     return render(request, 'conv.html', {'contents': Convenient.objects.all()})
 
 def write(request, board_id):
+    if not request.user.is_authenticated:
+        return redirect('/')
     return render(request, 'write.html', {'board_id': board_id})
 
 def write_post(request, board_id):
+    if not request.user.is_authenticated:
+        return redirect('/')
     if request.method == 'POST':
         post = CommunityPost(
             board=Board.objects.get(id=board_id),
@@ -85,3 +93,8 @@ def write_post(request, board_id):
         )
         post.save()
         return redirect(f'/main/board/list/{board_id}')
+
+def parking(request):
+    if not request.user.is_authenticated:
+        return redirect('/')
+    return render(request, 'parking.html', {'levels': Parking.objects.all()})

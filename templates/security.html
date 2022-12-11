@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'main/security.css'%}">
 
@@ -22,7 +23,7 @@
 
 {% for todo in todos %}
 <div id="notice">
-    {{todo.date}}
+    {{todo.deadline}} 까지
 
 
         <div class="title">
@@ -30,30 +31,30 @@
         </div>
 
         <div class="contents">
-            {{todo.content}}
+            {{todo.contents}}
             
         </div>
 
         <div id="bt">
             
           
-          {%if todo.do == 'need' %}
+          {%if todo.status == 0 %}
           <div id="bt">
-            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
         </div>
-          {%elif todo.do == 'ing' %}
+          {%elif todo.status == 1 %}
           <div id="bt">
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
-            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
+            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
         </div>
-           {%elif todo.do == 'end' %}
+           {%elif todo.status == 2 %}
            <div id="bt">
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/need'" value="필요"></div>
-            <div class="div2"><input type="submit" onclick="location.href='{{todo}}/ing'" value="처리중"></div>
-            <div class="div1"><input type="submit" onclick="location.href='{{todo}}/end'" value="완료"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/0'" value="필요"></div>
+            <div class="div2"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/1'" value="처리중"></div>
+            <div class="div1"><input type="submit" onclick="location.href='/security/todo/{{todo.id}}/2'" value="완료"></div>
         </div>
           {% endif %}
 
