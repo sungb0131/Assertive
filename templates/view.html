@@ -8,82 +8,81 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/css.css'%}">
 </head>
 <body>
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>{{ board_type.name }}</strong>
-            <p>{{ board_type.description }}</p>
-        </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title">
-                    {{board.title}}
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>번호</dt>
-                        <dd>{{board.id}}</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>{{board.auther}}</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>{{board.date}}</dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    {{board.contents}}
-                </div>
+<div class="board_wrap">
+    <div class="board_title">
+        <strong>{{ board_type.name }}</strong>
+        <p>{{ board_type.description }}</p>
+    </div>
+    <div class="board_view_wrap">
+        <div class="board_view">
+            <div class="title">
+                {{board.title}}
             </div>
-            <div class="comment">
-                {% if user.is_authenticated %}
-                <form action="/main/board/{{ board.id }}/comment" method="POST">
-                    {%csrf_token%}
-                    <input id="input1" type="text" name="comment" placeholder="댓글을 입력하세요">
-                    <input id="input2" type="checkbox" name="anonymous" values="'y">
-                    <span style="font-size: 1em;">익명</span>
-                    <input id="input3" type="submit" value="댓글 작성하기">
-                    <style>
-                        #input1 {
-                            width: 300px;
-                            height: 50px;
-                            border-top: none;
-                            border-left: none;
-                            border-right: none;
-                            border-bottom: 3px solid #87CEFA;
-                        }
-                        #input3 {
-                            width: 100px;
-                            height: 55px;
-                            background-color: white;
-                            border:  1px solid #87CEFA;
-                            border-radius: 3px;
-                        }
+            <div class="info">
+                <dl>
+                    <dt>번호</dt>
+                    <dd>{{board.id}}</dd>
+                </dl>
+                <dl>
+                    <dt>글쓴이</dt>
+                    <dd>{{board.auther}}</dd>
+                </dl>
+                <dl>
+                    <dt>작성일</dt>
+                    <dd>{{board.date}}</dd>
+                </dl>
+            </div>
+            <div class="cont">
+                {{board.contents}}
+            </div>
+        </div>
+        <div class="comment">
+            {% if user.is_authenticated %}
+            <form action="/main/board/{{ board.id }}/comment" method="POST">
+                {%csrf_token%}
+                <input id="input1" type="text" name="comment" placeholder="댓글을 입력하세요">
+                <input id="input2" type="checkbox" name="anonymous" values="'y">
+                <span style="font-size: 1em;">익명</span>
+                <input id="input3" type="submit" value="댓글 작성하기">
+                <style>
+                    #input1 {
+                        width: 300px;
+                        height: 50px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 3px solid #87CEFA;
+                    }
 
-                    </style>
-                </form>
-                {% endif %}
+                    #input3 {
+                        width: 100px;
+                        height: 55px;
+                        background-color: white;
+                        border: 1px solid #87CEFA;
+                        border-radius: 3px;
+                    }
+
+                </style>
+            </form>
+            {% endif %}
             <div class="comment_view">
                 <div class="com_up">
                     <strong>전체 댓글</strong>
                     <a href='#' onclick="return confirm('자신의 댓글을 삭제하시겠습니까?');">내 댓글 삭제</a>
                 </div>
                 <div>
-                {%for c in comment %}
-                    {%if c.isAnonymous == True%}
+                    {%for c in comment %}
                     <div class="coma">
                         <dl>
+                            {%if c.isAnonymous == True%}
                             <dt><strong>익명</strong></dt>
-                            <dd>{{contents}}</dd>
-                        </dl>
-                    {%else%}
-                        <dl>
+                            {%else%}
                             <dt><strong>{{c.auther}}</strong></dt>
+                            {%endif%}
                             <dd>{{c.contents}}</dd>
                         </dl>
                     </div>
-                {% endfor %}
+                    {%endfor%}
                 </div>
             </div>
             <div class="bt_wrap">

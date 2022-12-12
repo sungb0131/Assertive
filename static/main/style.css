@@ -51,6 +51,16 @@ a {
     text-align: center;
     font-size: 0;
 }
+.comment_view {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #87CEFA;
+    border-radius: 2px;
+    font-size: 1.4rem;
+}
+
 .bt_wrap a {
     display: inline-block;
     min-width: 80px;
@@ -197,6 +207,19 @@ a {
     border-bottom: 1px dashed #bddbfa;
     font-size: 2rem;
 }
+.comment_view .com_up {
+    padding: 15px;
+    border-bottom: 1px solid #84bbf3;
+    line-height: 160%;
+    font-size: 1.6rem;
+
+}
+
+.comment_view .com_up a {
+    text-align: right;
+
+}
+
 
 .board_view .info {
     padding: 15px;
@@ -233,6 +256,12 @@ a {
 .board_view .info dl dd {
     display: inline-block;
     font-size: 1.4rem;
+}
+
+.board_view .coma dl dt,
+.board_view .coma dl dd {
+    display: inline-block;
+    font-size: 2.0rem;
 }
 
 .board_view .info dl dd {
