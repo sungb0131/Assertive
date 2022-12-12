@@ -35,31 +35,27 @@
             
         </div>
 
-        <div id="bt">
-            
-          
-          {%if todo.status == 0 %}
+        
+          {%if todo.do == 'need' %}
           <div id="bt">
-            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
+            <div class="div1" onclick="location.href='{{todo}}/need'">필요</div>
+            <div class="div2" onclick="location.href='{{todo}}/ing'" >처리중</div>
+            <div class="div2" onclick="location.href='{{todo}}/end'">완료</div>
         </div>
-          {%elif todo.status == 1 %}
+          {%elif todo.do == 'ing' %}
           <div id="bt">
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
-            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
+            <div class="div2" onclick="location.href='{{todo}}/need'">필요</div>
+            <div class="div1" onclick="location.href='{{todo}}/ing'" >처리중</div>
+            <div class="div2" onclick="location.href='{{todo}}/end'">완료</div>
         </div>
-           {%elif todo.status == 2 %}
+           {%elif todo.do == 'end' %}
            <div id="bt">
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
-            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
-            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
+            <div class="div2" onclick="location.href='{{todo}}/need'">필요</div>
+            <div class="div2" onclick="location.href='{{todo}}/ing'" >처리중</div>
+            <div class="div1" onclick="location.href='{{todo}}/end'">완료</div>
         </div>
           {% endif %}
-
-
-        </div>
+     
       
 </div>
 {% endfor %}
