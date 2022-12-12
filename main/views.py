@@ -74,7 +74,7 @@ def add_comment(request, post_id):
 def view_post(request, post_id):
     if not request.user.is_authenticated:
         return redirect('/')
-    if CommunityPost.objects.get(id=post_id).board.id != 2:
+    if CommunityPost.objects.get(id=post_id).board.id == 3:
         return redirect('/main')
     return render(request, 'view.html', {
         'board': CommunityPost.objects.get(id=post_id),
