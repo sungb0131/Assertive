@@ -26,7 +26,15 @@ with open(BASE_DIR / 'config/secret.json') as f:
 SECRET_KEY = secret['django']
 
 LOGIN_REDIRECT_URL = 'main/'
+LOGOUT_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'main.User'
+
+BATON = {
+    'INDEX_TITLE': '보금자리 관리자',
+    'COPYRIGHT': '2022 © G4tsby',
+    'SITE_TITLE': '보금자리',
+    'POWERED_BY': '<a href="https://github.com/G4tsby/Assertive">어쩔디비</a>'
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,6 +44,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '146.56.99.103', 'g4tsby.xyz']
 # Application definition
 
 INSTALLED_APPS = [
+    'rangefilter',
     'common.apps.CommonConfig',
     'main.apps.MainConfig',
     'baton',

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글쓰기 페이지</title>
+    <title>글쓰기</title>
     <link rel="stylesheet" type="text/css" href="{% static 'main/css.css'%}">
 </head>
 <body>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>글쓰기 페이지</strong>
-            <p>자신의 내용을 적어보아요!</p>
+            <strong>글쓰기</strong>
+            <p>{{board_type}}</p>
         </div>
         <div class="board_write_wrap">
         <form action="/main/board/write/{{ board_id }}/submit" method="POST">

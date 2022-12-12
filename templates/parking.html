@@ -10,11 +10,12 @@
         방문 차량 등록
     </h1>
     <div style="text-align: center;">
-        <form>
+        <form action="/main/visitor" method="POST">
+            {% csrf_token %}
             <h5  style="text-align: center;">방문 날짜 선택</h5>
-            <p><input type="date" style="text-align: center;"></p>
+            <p><input type="date" name="date" style="text-align: center;"></p>
             <h5 class="alert alert-primary">차량번호</h1>
-            <p><input type="text"></p>
+            <p><input name="car" type="text"></p>
             <p><input type="submit" value="등록"></p>
         </form>
     </div>

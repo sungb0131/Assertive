@@ -11,16 +11,15 @@ class User(AbstractUser):
     car = models.CharField(max_length=8, null=True)
     phone = models.CharField(max_length=11)
 
-class Car(models.Model):
-    type = models.CharField(max_length=50)
-    visitor = models.BooleanField()
-
 #convenience0
 class Convenient(models.Model):
     title = models.CharField(max_length=50)
     time = models.CharField(max_length=50)
     content = models.TextField()
     cost = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.title}"
 
 class Fee(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -57,10 +56,11 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateTimeField()
     contents = models.TextField()
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE, null=True)
+    isAnonymous = models.BooleanField()
 
 class CommunityPost(Post):
-    isAnonymous = models.BooleanField()
+    pass
 
     def __str__(self):
         return f"{self.board}|{self.title}"
@@ -68,12 +68,8 @@ class CommunityPost(Post):
 class Comment(Post):
     post = models.ForeignKey(CommunityPost, on_delete=models.CASCADE)
 
-class complaints(Post):
-    category = models.CharField(max_length=20)
-
 class Notification(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    read = models.BooleanField()
     date = models.DateTimeField()
     title = models.CharField(max_length=20)
     contents = models.TextField()
@@ -82,3 +78,8 @@ class Parking(models.Model):
     floor = models.IntegerField()
     status = models.TextField()
     space = models.IntegerField()
+
+class Visitor(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    date = models.DateField()
+    car = models.CharField(max_length=8)

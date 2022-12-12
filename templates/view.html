@@ -75,9 +75,10 @@
             {% endfor %}
             </div>
             <div class="bt_wrap">
-                <a href="/main/board/list/{{ board.board_id }}" class="on">목록</a>
-                <a href="edit.html">수정</a>
-                <a href="delete.html" class="on">삭제</a>
+                <a href="/main/board/list/{{ board_type.id }}" class="on">목록</a>
+                {% if user.is_superuser or board.auther == user.username %}
+                <a href='/main/board/{{board.id}}/delete/{{ board_type.id }}' onclick="return confirm('정말 삭제하시겠습니까?');">삭제</a>
+                {%endif%}
             </div>
         </div>
     </div>

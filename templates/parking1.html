@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Parking</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+    <body style="height: 100vh;">
+        <h1 class="alert alert-primary" role="alert"  style="text-align:center; font-weight: bold;padding: 25px">
+            지하 1층 주차 공간
+        </h1>
+        <table border="0" align="center" style="border-color: white">
+            <tr class="wall">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="Entry"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+            <!-- 여기서 부터 데이터 받아서 출력할 부분 -->
+            <tr>
+                <td class="wall"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr class="road">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="road"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="road"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr class="road">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="road"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="road"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr class="road">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="road"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty" ></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr class="road">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="road"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+            <tr>
+                <td class="wall"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="road"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="full"></td>
+                <td class="full"></td>
+                <td class="wall"></td>
+            </tr>
+            <tr class="wall">
+                <td class="wall"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="Entry"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wall"></td>
+            </tr>
+        </table>
+        <style>
+            td{
+                padding: 2vw;
+                padding: 2vh;
+            }
+            .wall{
+                background-color: rgb(47, 40, 40);
+            }
+            .road{
+                background-color: gray;
+            }
+            .full{
+                background-color: red;
+            }
+            .empty{
+                background-color: rgb(75, 97, 245);
+            }.Entry{
+                background-color: rgb(255, 243, 12);
+            }
+        </style>
+        <button type="button" onclick="location.href='/main/parking'" class="btn btn-outline-danger" style="width: 100%; height: 7%; font-size:150%">주차 화면 돌아가기</button>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </body>
+
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

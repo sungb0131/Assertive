@@ -28,8 +28,12 @@
             {% for each in board_list %}
             <div>
                 <div class="num">{{each.id}}</div>
-                <div class="title"><a href="/main/board/{{ each.id }}">{{ each.title }}</a></div>
+                <div class="title"><a href="/main/board/{{ each.id }}">{{ each.title }} [{{each.comment_set.all|length}}]</a></div>
+                {% if each.isAnonymous %}
+                <div class="writer">익명</div>
+                {% else %}
                 <div class="writer">{{each.auther.username}}</div>
+                {% endif %}
                 <div class="date">{{each.date}}</div>
             </div>
             {% endfor %}
@@ -45,7 +49,7 @@
             <a href="#" class="bt next">></a>
             <a href="#" class="bt last">>></a>
         </div>
-        {% if board_type.id != 1 %}
+        {% if board_type.id == 1 and user.is_superuser or board_type != 1 %}
         <div class="bt_wrap">
             <a href="/main/board/write/{{ board_type.id }}" class="on">등록</a>
         </div>

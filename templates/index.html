@@ -20,8 +20,8 @@
         </div>
         
         <div class="box">
-            <button type="button" class="btm_image; float-right" id="img_btn">
-                <img  src="{% static 'main/user.png'%}"  height="50px">
+            <button onclick="location.href='/logout'" style = "background-color: #ffffff; height: 50px; weight:120px; font-weight: bold; font-size: 25px; " type="button" class="btm_image; float-right" id="img_btn">
+                로그아웃
             </button>
         </div>
 
@@ -39,7 +39,7 @@
 <div id="notice">공지
     {% for notice in notices %}
 
-    <div class="title" onclick="location.href='{{ notice.id }}'">
+    <div class="title" onclick="location.href='/main/board/{{ notice.id }}'">
         {{ notice.title }}
     </div>
 
@@ -97,7 +97,7 @@
 
         <div class="box">
             <button type="button" class="btm_image" id="img_btn" onclick="location.href='/main/board/list/1'">
-                <img  src="{% static 'main/sotong.png'%}"  height="200px">
+                <img src="{% static 'main/sotong.png'%}"  height="200px">
             </button>
             <p>
                 공지사항 
@@ -105,8 +105,8 @@
         </div>
 
         <div class="box">
-            <button type="button" class="btm_image" id="img_btn">
-                <img  src="{% static 'main/minwon.png'%}"  height="200px">
+            <button type="button" class="btm_image" id="img_btn" onclick="location.href='/main/board/write/3'">
+                <img src="{% static 'main/minwon.png'%}"  height="200px">
             </button>
             <p>
                 민원 
