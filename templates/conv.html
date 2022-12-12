@@ -7,22 +7,25 @@
 </head>
 <body>
     <div class="cov">
-        <h2>편의시설</h2>     
-            <div class="title">
-                <strong>{{content.title}}</strong>
-            </div>
-            <div class="imgBox">
-                <img src="{% static 'main/yogum.png'%}">
-            </div>
-                
-            <div class="inform">
+        <h2>편의시설</h2>
+       
             {% for content in contents %}
+        
+            <div class="title">
+                <p><{{content.title}}></p>
+            </div>
+
+            <div class="imgBox">
+                <img src="{% static 'main/{{content.picture}}'%}">
+            </div>
+
+            <div class="inform">
                 <p>위치: {{content.location}}</p>
                 <p>이용시간: {{content.time}}</p>
                 <p>이용요금: {{content.cost}}</p>
                 <p>연락처: {{content.number}}</p>
-            {% endfor %} 
-            </div>     
+            </div>
+            {% endfor %}               
     </div>
 </body>
-</html>
+</html> 
