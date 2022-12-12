@@ -12,7 +12,7 @@ button {
     border-radius: 10px 10px 10px 10px;
     word-wrap:break-word;
     word-break:break-all;
-
+    
   }
 
 
@@ -39,7 +39,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: #91e4ff;
+    background-color: #87CEFA;
     gap: 10px 5px;
     padding: 1rem;
 }
@@ -76,7 +76,6 @@ footer {
     padding: 1rem;
     color: white;
     background: hsl(0, 0%, 100%);
-    font-weight: bold;
     justify-content: space-between;
     align-items: center;
   
@@ -95,7 +94,8 @@ footer {
     padding: 2rem;
     color: white;
     align-items: center;
-    background: hsl(211, 100%, 62%);
+    font-weight: bold;
+    background: #87CEFA;
     justify-content: space-between;
 }
 #headi .box{
@@ -114,7 +114,7 @@ footer {
 
 
     #notice {
-        background-color:#0f9df5;
+        background-color: #87CEFA;
         border-radius: 30px;
         text-align: left;
         top: 0;
@@ -139,6 +139,6 @@ footer {
         color: rgb(0, 0, 0);
         word-break:keep-all;;
         border: 10px solid;
-        border-color: #0f9df5;
+        border-color: #87CEFA;
     }
    
