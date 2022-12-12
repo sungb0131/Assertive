@@ -10,7 +10,7 @@
 <body>
 <div class="board_wrap">
     <div>
-        <a href="#" class="myButton">홈 화면</a>
+        <a href="/main" class="bt_wrap1">홈 화면</a>
     </div>
     <div class="board_title">
         <strong>{{ board_type.name }}</strong>
@@ -42,18 +42,15 @@
             <a href="#" class="bt first"><<</a>
             <a href="#" class="bt prev"><</a>
             <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="num">4</a>
-            <a href="#" class="num">5</a>
             <a href="#" class="bt next">></a>
             <a href="#" class="bt last">>></a>
         </div>
+        {% if board_type.id != 1 %}
         <div class="bt_wrap">
             <a href="/main/board/write/{{ board_type.id }}" class="on">등록</a>
-            <!--<a href="#">수정</a>-->
         </div>
+        {% endif %}
     </div>
 </div>
 </body>
-</html> 
+</html>
