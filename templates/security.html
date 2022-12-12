@@ -36,23 +36,24 @@
         </div>
 
         
-          {%if todo.do == 'need' %}
+        
+        {%if todo.status == 0 %}
           <div id="bt">
-            <div class="div1" onclick="location.href='{{todo}}/need'">필요</div>
-            <div class="div2" onclick="location.href='{{todo}}/ing'" >처리중</div>
-            <div class="div2" onclick="location.href='{{todo}}/end'">완료</div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
-          {%elif todo.do == 'ing' %}
+        {%elif todo.status == 1 %}
           <div id="bt">
-            <div class="div2" onclick="location.href='{{todo}}/need'">필요</div>
-            <div class="div1" onclick="location.href='{{todo}}/ing'" >처리중</div>
-            <div class="div2" onclick="location.href='{{todo}}/end'">완료</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
-           {%elif todo.do == 'end' %}
+        {%elif todo.status == 2 %}
            <div id="bt">
-            <div class="div2" onclick="location.href='{{todo}}/need'">필요</div>
-            <div class="div2" onclick="location.href='{{todo}}/ing'" >처리중</div>
-            <div class="div1" onclick="location.href='{{todo}}/end'">완료</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/0'">필요</div>
+            <div class="div1" onclick="location.href='/security/todo/{{todo.id}}/1'" >처리중</div>
+            <div class="div2" onclick="location.href='/security/todo/{{todo.id}}/2'">완료</div>
         </div>
           {% endif %}
      
