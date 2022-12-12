@@ -3,6 +3,11 @@ from config import settings
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
+#main date
+class Calender(models.Model):
+    date = models.DateTimeField()
+    schedule = models.CharField(max_length=30)
+
 class User(AbstractUser):
     car = models.CharField(max_length=8, null=True)
     phone = models.CharField(max_length=11)
