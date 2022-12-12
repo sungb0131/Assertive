@@ -25,7 +25,7 @@ with open(BASE_DIR / 'config/secret.json') as f:
 
 SECRET_KEY = secret['django']
 
-LOGIN_REDIRECT_URL = 'main/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'main.User'
 
