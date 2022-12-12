@@ -29,13 +29,13 @@ def graph(request, time, kind):
         "labels": ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
     }
     if time == 'prev' or time == 'both':
-        fee = Fee.objects.filter(user=request.user, date_year=datetime.now().year - 1, kind=kind).order_by('date_month')
+        fee = Fee.objects.filter(user=request.user, date_year=datetime.datetime.now().year - 1, kind=kind).order_by('date_month')
         data['datasets'].append({
             "label": "작년",
             "data": [fee[i].fee for i in range(len(fee))]
         })
     if time == 'both' or time == 'now':
-        fee = Fee.objects.filter(user=request.user, date_year=datetime.now().year, kind=kind).order_by('date_month')
+        fee = Fee.objects.filter(user=request.user, date_year=datetime.datetime.now().year, kind=kind).order_by('date_month')
         data['datasets'].append({
             "label": "올해",
             "data": [fee[i].fee for i in range(len(fee))]
