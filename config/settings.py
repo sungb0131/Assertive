@@ -38,12 +38,14 @@ ALLOWED_HOSTS = ['127.0.0.1', '146.56.99.103', 'g4tsby.xyz']
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'main.apps.MainConfig',
+    'baton',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'baton.autodiscover'
 ]
 
 MIDDLEWARE = [

@@ -1,19 +1,15 @@
 from django.db import models
 from config import settings
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
 
 #main date
 class Calender(models.Model):
-    date = models.DateTimeField()
-    schedule = models.CharField(max_length=30)
+    date = models.DateField()
+    content = models.CharField(max_length=30)
 
 class User(AbstractUser):
     car = models.CharField(max_length=8, null=True)
     phone = models.CharField(max_length=11)
-
-class park(models.Model):
-    date = models.DateTimeField()
 
 class Car(models.Model):
     type = models.CharField(max_length=50)
@@ -37,10 +33,6 @@ class Fee(models.Model):
 
     def __str__(self):
         return f"{self.type_dict[self.kind]}요금 {self.user.username}님 {self.date_year}년 {self.date_month}월"
-#security
-class CCTV(models.Model):
-    address = models.CharField(max_length=100)
-    floor = models.IntegerField()
 
 class SecurityTodo(models.Model):
     date = models.DateTimeField()
@@ -49,10 +41,16 @@ class SecurityTodo(models.Model):
     contents = models.TextField()
     status = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.title}"
+
 #commuity
 class Board(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Post(models.Model):
     auther = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
