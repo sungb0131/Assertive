@@ -65,14 +65,15 @@
                 </form>
                 {% endif %}
             <div class="comment_view">
-            {%for c in comment %}
-                {%if c.isAnonymous == True%}
-                <span>익명</span>
-                {%else%}
-                <span>{{c.auther}}</span>
-                {%endif%}
-                {{c.contents }}
-            {% endfor %}
+                {%for c in comment %}
+                    {%if c.isAnonymous == True%}
+                    <div><big>익명</big></div>
+                    {%else%}
+                    <div><big>{{c.auther}}</big></div>
+                    {%endif%}
+                    <big>{{c.contents }}</big>
+                {% endfor %}
+            <a href='#' onclick="return confirm('자신의 삭제하시겠습니까?');">댓글 삭제</a>
             </div>
             <div class="bt_wrap">
                 <a href="/main/board/list/{{ board_type.id }}" class="on">목록</a>
