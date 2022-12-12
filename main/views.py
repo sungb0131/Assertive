@@ -14,10 +14,14 @@ def index(request):
     if not request.user.is_authenticated:
         return redirect('/')
     return render(request, 'index.html', {'plans': [
-        Plans('12/4 (일)', '후라이드치킨먹기'), Plans('12/5 (월)', '양념치킨먹기'), Plans('12/6 (화)', '간장치킨먹기'), Plans('12/7 (수)', '뿌링클치킨먹기'),
-        Plans('12/8 (목)', '굽네치킨먹기'), Plans('12/9 (금)', '지코바치킨먹기'), Plans('12/10 (토)', '눈꽃치즈치킨먹기')
+        ((Calender.date-timedelta(days=3),week[r-3]), '후라이드'), 
+        ((Calender.date-timedelta(days=2),week[r-2]), '양념'), 
+        ((Calender.date-timedelta(days=1),week[r-1]), '간장'), 
+        ((Calender.date,week[r]), '뿌링클'),
+        ((Calender.date+timedelta(days=1),week[r-6]), '굽네'), 
+        ((Calender.date+timedelta(days=2),week[r-5]), '지코바'), 
+        ((Calender.date+timedelta(days=1),week[r-4]), '눈꽃치즈')
     ], 'notices': CommunityPost.objects.filter(board=1).order_by('-date')[:5]})
-
 def graph(request, time, kind):
     if not request.user.is_authenticated:
         return redirect('/')
