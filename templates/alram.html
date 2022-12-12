@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link  rel="stylesheet" type="text/css" href="{% static 'main/alram.css'%}">
+
+</head>
+
+<!--상단바----------------------------------------------------------------------------------------------------------------------------->
+  
+<body>
+    <div id="headi"><!-- 상단바 고정 -->
+        <div class="div1" onclick="location.href='/main'"> 메인화면 이동</div>
+    </div>
+
+    <div id="header_serve"> </div><!-- 상단바 고정시 필요한 공백 추가 -->
+
+{% for alram in alrams %}
+
+    <div id="notice">
+
+            {{alram.title}}
+
+            <div class="title">
+                {{alram.date}}
+            </div>
+
+            <div class="contents">
+                {{alram.contents}}
+            </div>      
+    </div>
+
+{% endfor %}
+
+
+
+    </body>
+    </html>
