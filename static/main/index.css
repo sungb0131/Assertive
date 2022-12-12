@@ -83,7 +83,7 @@ footer {
 
 #headi {
     display: grid;
-    grid-template-columns: 9fr 1fr 1fr;
+    grid-template-columns: 9fr 2fr 3fr;
     font-size: 40px;
     position: fixed;
     top: 0;
@@ -100,8 +100,6 @@ footer {
 }
 #headi .box{
     color: #ffffff;
-    font-weight: bold;
-    text-align: left;
 
   }
 
