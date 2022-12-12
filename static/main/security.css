@@ -8,7 +8,7 @@ button {
     background-color:transparent;
   }
   #header_serve {
-    height: 60px;
+    height: 80px;
     padding: 1rem;
     color: white;
     background: hsl(0, 0%, 100%);
@@ -28,7 +28,7 @@ button {
     left: 0%;
     right: 0;
     padding: 8px 12px;
-    height: 10px;
+    height: 20px;
     padding: 2rem;
     color: white;
     align-items: center;
@@ -70,6 +70,7 @@ button {
   justify-content: space-between;
   align-items: center;
   border-radius: 0px 0px 5px 5px;
+  
 }
 
 .div1 {
